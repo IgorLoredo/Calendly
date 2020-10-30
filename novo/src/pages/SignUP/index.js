@@ -43,6 +43,7 @@ class SignUp extends Component {
           <hr />
           <Link to="/">Fazer login</Link>
         </Form>
+        
       </Container>
     );
   }
