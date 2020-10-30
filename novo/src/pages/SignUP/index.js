@@ -15,7 +15,7 @@ class SignUp extends Component {
 
   handleSignUp = e => {
     e.preventDefault();
-    alert("Eu vou te registrar");
+    console.log(e);
   };
 
   render() {

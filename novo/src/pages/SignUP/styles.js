@@ -15,6 +15,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
    background-color:#eee;
+   border-radius: 30px;
   body{
      
   }
@@ -39,7 +40,7 @@ export const Form = styled.form`
     padding: 0 20px;
     color: #777;
     font-size: 30px;
-    
+   border-radius: 10px; 
     border: 1px solid #ddd;
     &::placeholder {
       color: #999;
