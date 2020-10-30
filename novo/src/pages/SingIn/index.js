@@ -23,6 +23,7 @@ class SignIn extends Component {
     } else {
       try {
         const response = await api.post("/sessions", { email, password });
+        console.log(email);
         login(response.data.token);
         this.props.history.push("/app");
       } catch (err) {
