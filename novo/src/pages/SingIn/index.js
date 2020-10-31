@@ -42,9 +42,9 @@ class SignIn extends Component {
         
           {this.state.error && <p>{this.state.error}</p>}
           <input
-            type="email"
-            placeholder="Endereço de e-mail"
-            onChange={e => this.setState({ email: e.target.value })}
+            type="text"
+            placeholder="Usuário"
+            onChange={e => this.setState({ username: e.target.value })}
           />
           <input
             type="password"

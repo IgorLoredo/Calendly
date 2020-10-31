@@ -39,6 +39,7 @@ export const Form = styled.form`
     margin-bottom: 15px;
     padding: 0 20px;
     color: #777;
+    text-align: center;
     font-size: 30px;
    border-radius: 10px; 
     border: 1px solid #ddd;
