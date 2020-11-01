@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 //1
+mongoose.connect();
+
 var UsuarioSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -21,6 +23,7 @@ UsuarioSchema.pre('save', function(next) {
     bcrypt.hash(user.password, salt, null, function(err, hash) {
       if (err) return next(err);
       user.password = hash;
+      
       next();
     });
   });
