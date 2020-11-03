@@ -29,4 +29,4 @@ const MongoClient = require('mongodb').MongoClient;
   
  // mongoose.connect(db).then(console.log("ok")).catch("erro no mongodb");;
   app.listen(port);
-  console.log('conectado a porta ' + port);   console.log("ssssssssssssssssssssssssssssss");
+  console.log('conectado a porta ' + port);   
