@@ -12,6 +12,7 @@ require('moment/locale/fr.js');
       "color-3":"rgba(235, 85, 59, 1)" ,
       "color-4":"rgba(70, 159, 213, 1)",
       "color-5":"rgba(170, 59, 123, 1)"
+      //"color-6":"rgba(120,58,124,1)"
     }
 
 
@@ -59,6 +60,7 @@ var items = [
     endDateTime   : new Date(now.getFullYear(), now.getMonth(), now.getDate()+7, 17),
     classes       : 'color-3'
   }
+  
 ];
 
 export default class Agenda extends Component {
