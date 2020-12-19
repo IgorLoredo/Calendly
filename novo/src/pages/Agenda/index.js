@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import moment from 'moment';
-import { ReactAgenda , ReactAgendaCtrl, guid , getUnique , getLast , getFirst , Modal } from 'react-agenda';
+import { ReactAgenda , ReactAgendaCtrl, guid , getUnique , getLast , getFirst , Modal } from '../../../node_modules/react-agenda/';
 
 var now = new Date();
 

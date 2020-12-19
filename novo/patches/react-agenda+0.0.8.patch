@@ -1,0 +1,94 @@
+diff --git a/node_modules/react-agenda/src/helpers.js b/node_modules/react-agenda/src/helpers.js
+index 6c9d831..dfc8262 100644
+--- a/node_modules/react-agenda/src/helpers.js
++++ b/node_modules/react-agenda/src/helpers.js
+@@ -78,7 +78,7 @@ export function mapItems(itemsArray, rowsPerHour, timezone) {
+     }
+     var interval = (60 / rowsPerHour);
+     var offsetMinutes = item.startDateTime.getMinutes() % interval;
+-    var start = moment(item.startDateTime).subtract(offsetMinutes, "minutes").toDate();
++    var start = moment(item.startDateTime).subtract(offsetMinutes, "minutos").toDate();
+     var end = moment(item.endDateTime);
+     var duration = moment.duration(end.diff(start));
+     item.duration = duration
+@@ -86,7 +86,7 @@ export function mapItems(itemsArray, rowsPerHour, timezone) {
+ 
+     var cellRefs = [];
+     for (var i = 0; i < rows; i++) {
+-      var ref = moment(start).add(i * interval, 'minutes');
++      var ref = moment(start).add(i * interval, 'minutos');
+       // if(timezone) {
+       //     ref.tz(timezone);
+       // }
+diff --git a/node_modules/react-agenda/src/reactAgendaCtrl.js b/node_modules/react-agenda/src/reactAgendaCtrl.js
+index 33c344b..fa0a280 100644
+--- a/node_modules/react-agenda/src/reactAgendaCtrl.js
++++ b/node_modules/react-agenda/src/reactAgendaCtrl.js
+@@ -217,22 +217,22 @@ render() {
+         <form onSubmit={this.handleEdit}>
+           <div className="agendCtrls-label-wrapper">
+             <div className="agendCtrls-label-inline">
+-              <label>Event name</label>
++              <label>Nome do evento</label>
+               <input type="text" name="name" autoFocus ref="eventName" className="agendCtrls-event-input" value={this.state.name} onChange={this.handleChange.bind(this)} placeholder="Event Name"/>
+             </div>
+             <div className="agendCtrls-label-inline ">
+-              <label>Color</label>
++              <label>Cor</label>
+               <div className="agendCtrls-radio-wrapper">
+                 {colors}</div>
+             </div>
+           </div>
+           <div className="agendCtrls-timePicker-wrapper">
+             <div className="agendCtrls-time-picker">
+-              <label >Start Date</label>
++              <label >Data inicial</label>
+               <Rdate value={this.state.startDateTime} onChange={this.handleDateChange.bind(null, 'startDateTime')} input={false} viewMode="time" ></Rdate>
+             </div>
+             <div className="agendCtrls-time-picker">
+-              <label >End Date</label>
++              <label >Data final</label>
+               <Rdate value={this.state.endDateTime} onChange={this.handleDateChange.bind(null, 'endDateTime')} input={false} viewMode="time" ></Rdate>
+             </div>
+           </div>
+@@ -249,22 +249,22 @@ render() {
+       <form onSubmit={this.handleSubmit}>
+         <div className="agendCtrls-label-wrapper">
+           <div className="agendCtrls-label-inline">
+-            <label>Event name</label>
+-            <input type="text" ref="eventName" autoFocus name="name" className="agendCtrls-event-input" value={this.state.name} onChange={this.handleChange.bind(this)} placeholder="Event Name"/>
++            <label>Nome do evento</label>
++            <input type="text" ref="eventName" autoFocus name="name" className="agendCtrls-event-input" value={this.state.name} onChange={this.handleChange.bind(this)} placeholder="Nome do Evento"/>
+           </div>
+           <div className="agendCtrls-label-inline">
+-            <label>Color</label>
++            <label>Cor</label>
+             <div className="agendCtrls-radio-wrapper">
+               {colors}</div>
+           </div>
+         </div>
+         <div className="agendCtrls-timePicker-wrapper">
+           <div className="agendCtrls-time-picker">
+-            <label >Start Date</label>
++            <label >Data de início</label>
+             <Rdate value={this.state.startDateTime} onChange={this.handleDateChange.bind(null, 'startDateTime')} input={false} viewMode="time" ></Rdate>
+           </div>
+           <div className="agendCtrls-time-picker">
+-            <label >End Date</label>
++            <label >Data Final</label>
+             <Rdate value={this.state.endDateTime} onChange={this.handleDateChange.bind(null, 'endDateTime')} input={false} viewMode="time" ></Rdate>
+           </div>
+         </div>
+diff --git a/node_modules/react-agenda/src/reactAgendaItem.js b/node_modules/react-agenda/src/reactAgendaItem.js
+index 868d599..1cc9f3b 100644
+--- a/node_modules/react-agenda/src/reactAgendaItem.js
++++ b/node_modules/react-agenda/src/reactAgendaItem.js
+@@ -115,7 +115,7 @@ if(elem){
+             </small>
+           </div>
+ 
+-    </div>
++      </div>
+ 
+   }
+ }
